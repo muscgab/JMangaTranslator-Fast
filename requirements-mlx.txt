@@ -1,0 +1,5 @@
+# MLX backend (Apple silicon GPU, no PyTorch). Tested with mlx 0.31.1.
+mlx
+tokenizers
+sentencepiece
+numpy

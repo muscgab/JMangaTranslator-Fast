@@ -1,0 +1,2 @@
+CPU(s):                          48
+Model name:                      Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz

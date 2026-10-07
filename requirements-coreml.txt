@@ -1,0 +1,5 @@
+# Core ML backend (macOS 15 or later, Apple Neural Engine). Tested with coremltools 9.0 on macOS 27.0.
+coremltools
+tokenizers
+sentencepiece
+numpy

@@ -1,0 +1,16 @@
+{
+ "system": "nano",
+ "n": 500,
+ "warm": 20,
+ "p50_ms": 63.0,
+ "p90_ms": 113.8,
+ "mean_ms": 99.6,
+ "total_s": 49.8,
+ "load_s": 6.9,
+ "capture_s": null,
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "cpu": "Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz",
+ "torch": "2.8.0+cu126",
+ "python": "3.10.12",
+ "peak_gib": 0.72
+}

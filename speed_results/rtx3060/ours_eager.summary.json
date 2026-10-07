@@ -1,0 +1,16 @@
+{
+ "system": "ours_eager",
+ "n": 500,
+ "warm": 20,
+ "p50_ms": 54.7,
+ "p90_ms": 84.0,
+ "mean_ms": 58.8,
+ "total_s": 29.4,
+ "load_s": 11.4,
+ "capture_s": null,
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "cpu": "Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz",
+ "torch": "2.8.0+cu126",
+ "python": "3.10.12",
+ "peak_gib": 1.39
+}

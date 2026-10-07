@@ -1,0 +1,16 @@
+{
+ "system": "ours_graph",
+ "n": 500,
+ "warm": 20,
+ "p50_ms": 4.7,
+ "p90_ms": 6.9,
+ "mean_ms": 5.0,
+ "total_s": 2.5,
+ "load_s": 14.8,
+ "capture_s": 1.1,
+ "gpu": "NVIDIA GeForce RTX 4090",
+ "cpu": "Intel(R) Xeon(R) Gold 6430",
+ "torch": "2.8.0+cu126",
+ "python": "3.11.17",
+ "peak_gib": 0.79
+}

@@ -1,0 +1,5 @@
+# ONNX Runtime backend (CPU, no PyTorch). Tested with onnxruntime 1.23.2.
+onnxruntime
+tokenizers
+sentencepiece
+numpy

@@ -1,0 +1,65 @@
+{
+ "note": "M1 Pro, 200 boxes, batch=1; MPS rows from mps_bench.py, MLX rows from mlx_zakkuri.py (identical_to_ref vs MPS eager fp32)",
+ "mps": [
+  {
+   "mode": "eager_fp32",
+   "n": 200,
+   "p50_ms": 73.6,
+   "p90_ms": 121.3,
+   "mean_ms": 81.4,
+   "load_s": 31.5,
+   "mps_gib": 2.09,
+   "identical_to_eager": 1.0
+  },
+  {
+   "mode": "static_fp16",
+   "n": 200,
+   "p50_ms": 60.2,
+   "p90_ms": 91.8,
+   "mean_ms": 64.7,
+   "load_s": 29.4,
+   "mps_gib": 1.02,
+   "identical_to_eager": 0.995
+  },
+  {
+   "mode": "compiled_fp16",
+   "n": 200,
+   "p50_ms": 39.6,
+   "p90_ms": 62.1,
+   "mean_ms": 42.6,
+   "load_s": 29.2,
+   "mps_gib": 2.39,
+   "identical_to_eager": 0.985
+  }
+ ],
+ "mlx": [
+  {
+   "mode": "mlx_float16_chunk8_compiled_args",
+   "p50_ms": 20.2,
+   "p90_ms": 29.4,
+   "mean_ms": 24.0,
+   "identical_to_ref": 0.985
+  },
+  {
+   "mode": "mlx_float16_chunk8_compiled_args (10 yes processes)",
+   "p50_ms": 22.2,
+   "p90_ms": 32.9,
+   "mean_ms": 26.2,
+   "identical_to_ref": 0.985
+  },
+  {
+   "mode": "mlx_float16_chunk8_exact",
+   "p50_ms": 20.3,
+   "p90_ms": 29.8,
+   "mean_ms": 24.4,
+   "identical_to_ref": 0.98
+  }
+ ],
+ "coreml_ane_previous": {
+  "source": "artifacts/coreml_20261007/stress.log",
+  "ane_static_idle_p50": 32.4,
+  "ane_static_busy_p50": 37.8,
+  "cpu_fp32_idle_p50": 89.9,
+  "cpu_fp32_busy_p50": 146.6
+ }
+}
