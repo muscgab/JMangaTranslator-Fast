@@ -42,6 +42,10 @@ For comparison, GalTransl-v4-4B (llama.cpp, Q6_K) takes 147.6 ms per bubble on t
 
 ## Usage
 
+To try it without installing anything, open the notebook in Colab or Kaggle (load once, then translate):
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/muscgab/JMangaTranslator-Fast/blob/main/notebook.ipynb) [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/muscgab/JMangaTranslator-Fast/blob/main/notebook.ipynb)
+
 The full release (weights, exported models and code) is on [Hugging Face](https://huggingface.co/muscgab/JMangaTranslator-Fast) and [ModelScope](https://modelscope.cn/models/muscgab/JMangaTranslator-Fast). [GitHub](https://github.com/muscgab/JMangaTranslator-Fast) holds the code only.
 
 ```bash

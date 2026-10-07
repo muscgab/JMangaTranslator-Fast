@@ -117,9 +117,19 @@ class Translator(nn.Module):
 
 
 def load(rel: Release, device: str = "cpu") -> Translator:
+    """Build on the meta device so the random initialization (about 30 s on a laptop CPU) is skipped, then take the
+    checkpoint tensors as parameters. The RoPE tables are not in the checkpoint and are rebuilt."""
     from safetensors.torch import load_file
-    m = Translator(rel.cfg, str(rel.root / "tokenizer"))
-    m.load_state_dict(load_file(str(rel.root / "model.safetensors")), strict=True)
+    sd = load_file(str(rel.root / "model.safetensors"))
+    with torch.device("meta"):
+        m = Translator(rel.cfg, str(rel.root / "tokenizer"))
+    m.load_state_dict(sd, strict=True, assign=True)
+    rot = getattr(m.encoder, "rotary_emb", None)
+    if rot is not None:
+        m.encoder.rotary_emb = type(rot)(config=m.encoder.config)
+    if any(x.is_meta for x in [*m.parameters(), *m.buffers()]):     # other transformers layouts: slow, safe path
+        m = Translator(rel.cfg, str(rel.root / "tokenizer"))
+        m.load_state_dict(sd, strict=True)
     return m.float().eval().to(device)
 
 

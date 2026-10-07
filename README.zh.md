@@ -42,6 +42,10 @@ batch=1 时单个对话框从分词到输出译文的延迟中位数（p50）：
 
 ## 使用
 
+不想本地安装的话，可以直接在 Colab 或 Kaggle 里打开 notebook（加载一次，之后反复翻译）：
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/muscgab/JMangaTranslator-Fast/blob/main/notebook.ipynb) [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/muscgab/JMangaTranslator-Fast/blob/main/notebook.ipynb)
+
 完整发布包（权重、导出模型和代码）在 [Hugging Face](https://huggingface.co/muscgab/JMangaTranslator-Fast) 和 [ModelScope](https://modelscope.cn/models/muscgab/JMangaTranslator-Fast)，[GitHub](https://github.com/muscgab/JMangaTranslator-Fast) 只放代码。
 
 ```bash
