@@ -120,6 +120,9 @@ def load(rel: Release, device: str = "cpu") -> Translator:
     """Build on the meta device so the random initialization (about 30 s on a laptop CPU) is skipped, then take the
     checkpoint tensors as parameters. The RoPE tables are not in the checkpoint and are rebuilt."""
     from safetensors.torch import load_file
+    # Import the transformers model classes before entering the meta device: a first import inside it fails on
+    # torch 2.8 with a circular torch._dynamo import (seen on Windows, torch 2.8.0 + transformers 5.19.0).
+    from transformers import AutoModel  # noqa: F401
     sd = load_file(str(rel.root / "model.safetensors"))
     with torch.device("meta"):
         m = Translator(rel.cfg, str(rel.root / "tokenizer"))
